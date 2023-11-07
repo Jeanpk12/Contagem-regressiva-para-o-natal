@@ -1,0 +1,191 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #f2f2f2;
+    display: flex;
+}
+
+.ilustracao img{
+    position: relative;
+    width: 450px;
+    height: 100%;
+    background-size: cover;
+    
+}
+
+.container .countdown-container{
+    display: flex;
+    width: calc(100% - 450px);
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.countdown-container h2{
+    text-align: center;
+    font-size: 5em;
+    color: #021C29;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 500;
+    line-height: 5rem;
+}
+
+.countdown-container h2 span{
+    color: #A60311;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .btn p {
+    font-size: 24px;
+    color: #021C29;
+    margin: 0 16px;
+    text-align: center;
+  }
+
+
+#exibirMensagemBtn{
+    height: 45px;
+   width: 280px;
+   border: 1px solid #A60311;
+   outline: none;
+   margin-top: 54px;
+   margin-bottom: 16px;
+   border-radius: 20px;
+   font-size: 16px;
+   background-color: #A60311;
+   color: #f2f2f2; 
+   cursor: pointer;
+   transition: all 0.5s;
+}
+
+#exibirMensagemBtn:hover{
+    background-color: #f2f2f2;
+    color: #A60311;
+    border: 1px solid #A60311;
+}
+
+.countdown{
+    margin-top: 30px;
+    background: rgba(47, 120, 152, 0.2);
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.countdown div{
+    position: relative;
+    width: 100px;
+    text-align: center;
+    color: #A60311;
+    font-size: 2.5em;
+    font-weight: 500;
+    margin: 0 15px;
+    margin-top: -25px;
+}
+
+.countdown div::before{
+    content: 'text';
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    color: #021C29;
+    font-size: 0.35em;
+    font-weight: 500;
+    line-height: 35px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.countdown div#day::before{
+    content: 'Dias';
+}
+
+.countdown div#hour::before{
+    content: 'Horas';
+}
+
+.countdown div#minute::before{
+    content: 'Minutos';
+}
+
+.countdown div#second::before{
+    content: 'Segundos';
+}
+
+@media (max-width: 1325px){
+    .countdown-container h2{
+        font-size: 3em;
+        letter-spacing: 2px;
+        line-height: 3rem;
+    }
+
+    #exibirMensagemBtn{
+        margin-top: 36px;
+    }
+
+    .btn p {
+        font-size: 18px;
+      }
+}
+
+@media (max-width: 1079px){
+    .countdown-container h2{
+        font-size: 2em;
+        letter-spacing: 1px;
+        line-height: 2rem;
+    }
+
+    #exibirMensagemBtn{
+        margin-top: 20px;
+    }
+
+    .btn p {
+        font-size: 16px;
+      }
+}
+
+@media (max-width: 880px){
+    .container .ilustracao{
+        display: none;
+
+    }
+
+    .container{
+        background-image: linear-gradient(to bottom right, #052532, #398DB1);
+        background-size: cover;
+        
+    }
+
+    .container .countdown-container{
+        width: 100%;
+    }
+
+    .countdown-container h2{
+        color: #f2f2f2;
+    }
+
+    .countdown div::before{
+        color: #f2f2f2;
+    }
+
+    .btn p {
+        font-size: 18px;
+        color: #f2f2f2;
+      }
+}
