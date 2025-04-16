@@ -1,44 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contagem regressiva para o natal</title>
+    <title>Contagem Regressiva para o Natal</title>
 
-    <!-- link css -->
+    <!-- CSS -->
     <link rel="stylesheet" href="src/css/reset.css">
     <link rel="stylesheet" href="src/css/style.css">
 
-    <!-- google fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- google fonts -->
-
-
 </head>
 <body>
     <div class="container">
+        <h1 class="visually-hidden">Contador de Natal</h1> <!-- H1 para acessibilidade -->
+
         <div class="ilustracao">
-            <img src="src/image/17663.jpg" alt="">
+            <img src="src/image/17663.jpg" alt="Ilustração de Natal">
         </div>
 
         <div class="countdown-container">
             <h2>Contagem Regressiva para o <span>Natal!</span></h2>
-            
+
             <div class="btn">
-                <button id="exibirMensagemBtn" onclick="exibirNovaMensagem()">Exibir mensagem de natal</button>
-                <p id="mensagemNatal"></p>
+                <button id="exibirMensagemBtn" onclick="exibirNovaMensagem()">Exibir mensagem de Natal</button>
             </div>
+
+            <div id="mensagemNatal" class="mensagem"></div>
 
             <div class="countdown">
-                <div id="day">NA</div>
-                <div id="hour">NA</div>
-                <div id="minute">NA</div>
-                <div id="second">NA</div>
+                <div class="time-box">
+                    <div id="day">NA</div>
+                    <span>Dias</span>
+                </div>
+                <div class="time-box">
+                    <div id="hour">NA</div>
+                    <span>Horas</span>
+                </div>
+                <div class="time-box">
+                    <div id="minute">NA</div>
+                    <span>Minutos</span>
+                </div>
+                <div class="time-box">
+                    <div id="second">NA</div>
+                    <span>Segundos</span>
+                </div>
             </div>
-        </div> 
-
+        </div>
     </div>
 
     <script src="src/js/script.js"></script>

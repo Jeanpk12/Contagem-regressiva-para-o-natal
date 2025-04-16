@@ -1,191 +1,232 @@
-*{
-    font-family: 'Poppins', sans-serif;
+:root {
+    --primary-color: #A60311;
+    --secondary-color: #021C29;
+    --background-light: #f2f2f2;
+    --text-color-light: #f2f2f2;
+    --overlay-color: rgba(47, 120, 152, 0.2);
+    --font-family: 'Poppins', sans-serif;
 }
 
-.container{
-    position: relative;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+}
+
+body, html {
+    height: 100%;
+    background-color: var(--background-light);
+}
+
+.container {
+    display: flex;
     width: 100%;
     height: 100vh;
-    background: #f2f2f2;
-    display: flex;
+    background-color: var(--background-light);
 }
 
-.ilustracao img{
-    position: relative;
+.ilustracao {
     width: 450px;
     height: 100%;
-    background-size: cover;
-    
+    flex-shrink: 0;
 }
 
-.container .countdown-container{
+.ilustracao img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.countdown-container {
     display: flex;
-    width: calc(100% - 450px);
-    justify-content: center;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    width: calc(100% - 450px);
+    padding: 2rem;
+    text-align: center;
 }
 
-.countdown-container h2{
-    text-align: center;
-    font-size: 5em;
-    color: #021C29;
+.countdown-container h2 {
+    font-size: 4rem;
+    color: var(--secondary-color);
     text-transform: uppercase;
     letter-spacing: 4px;
-    font-weight: 500;
-    line-height: 5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 2rem;
 }
 
-.countdown-container h2 span{
-    color: #A60311;
+.countdown-container h2 span {
+    color: var(--primary-color);
 }
 
 .btn {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-  }
+    align-items: center;
+    margin-top: 1rem;
+}
 
-  .btn p {
-    font-size: 24px;
-    color: #021C29;
-    margin: 0 16px;
+.btn p {
+    font-size: 1.25rem;
+    color: var(--secondary-color);
     text-align: center;
-  }
+    margin-top: 1rem;
+}
 
-
-#exibirMensagemBtn{
+#exibirMensagemBtn {
+    width: 280px;
     height: 45px;
-   width: 280px;
-   border: 1px solid #A60311;
-   outline: none;
-   margin-top: 54px;
-   margin-bottom: 16px;
-   border-radius: 20px;
-   font-size: 16px;
-   background-color: #A60311;
-   color: #f2f2f2; 
-   cursor: pointer;
-   transition: all 0.5s;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    border: 1px solid var(--primary-color);
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
 }
 
-#exibirMensagemBtn:hover{
-    background-color: #f2f2f2;
-    color: #A60311;
-    border: 1px solid #A60311;
+#exibirMensagemBtn:hover {
+    background-color: var(--background-light);
+    color: var(--primary-color);
 }
 
-.countdown{
-    margin-top: 30px;
-    background: rgba(47, 120, 152, 0.2);
+.mensagem {
+    font-size: 1.125rem;
+    color: var(--secondary-color);
+    margin-top: 1rem;
+    max-width: 600px;
+}
+
+.countdown {
+    margin-top: 2rem;
     width: 100%;
+    max-width: 800px;
     height: 120px;
+    background-color: var(--overlay-color);
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 16px;
+    padding: 0 1rem;
 }
 
-.countdown div{
-    position: relative;
+.time-box {
     width: 100px;
+    margin: 0 10px;
     text-align: center;
-    color: #A60311;
-    font-size: 2.5em;
-    font-weight: 500;
-    margin: 0 15px;
-    margin-top: -25px;
+    position: relative;
 }
 
-.countdown div::before{
-    content: 'text';
-    position: absolute;
-    bottom: -30px;
-    left: 0;
-    width: 100%;
-    height: 35px;
-    color: #021C29;
-    font-size: 0.35em;
-    font-weight: 500;
-    line-height: 35px;
-    letter-spacing: 1px;
+.time-box div {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.time-box span {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--secondary-color);
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.countdown div#day::before{
-    content: 'Dias';
+.visually-hidden {
+    position: absolute !important;
+    height: 1px; width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
 }
 
-.countdown div#hour::before{
-    content: 'Horas';
-}
+/* Responsivo */
 
-.countdown div#minute::before{
-    content: 'Minutos';
-}
-
-.countdown div#second::before{
-    content: 'Segundos';
-}
-
-@media (max-width: 1325px){
-    .countdown-container h2{
-        font-size: 3em;
-        letter-spacing: 2px;
-        line-height: 3rem;
+@media (max-width: 1200px) {
+    .countdown-container h2 {
+        font-size: 3rem;
     }
 
-    #exibirMensagemBtn{
-        margin-top: 36px;
+    .time-box div {
+        font-size: 2rem;
     }
 
     .btn p {
-        font-size: 18px;
-      }
+        font-size: 1.1rem;
+    }
 }
 
-@media (max-width: 1079px){
-    .countdown-container h2{
-        font-size: 2em;
-        letter-spacing: 1px;
-        line-height: 2rem;
+@media (max-width: 992px) {
+    .countdown-container h2 {
+        font-size: 2.5rem;
     }
 
-    #exibirMensagemBtn{
-        margin-top: 20px;
+    .countdown {
+        height: 100px;
     }
 
-    .btn p {
-        font-size: 16px;
-      }
+    .time-box {
+        margin: 0 8px;
+    }
+
+    .time-box div {
+        font-size: 1.75rem;
+    }
 }
 
-@media (max-width: 880px){
-    .container .ilustracao{
-        display: none;
-
-    }
-
-    .container{
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
         background-image: linear-gradient(to bottom right, #052532, #398DB1);
-        background-size: cover;
-        
     }
 
-    .container .countdown-container{
+    .ilustracao {
+        display: none;
+    }
+
+    .countdown-container {
         width: 100%;
+        padding: 2rem;
     }
 
-    .countdown-container h2{
-        color: #f2f2f2;
-    }
-
-    .countdown div::before{
-        color: #f2f2f2;
-    }
-
+    .countdown-container h2,
     .btn p {
-        font-size: 18px;
-        color: #f2f2f2;
-      }
+        color: var(--text-color-light);
+    }
+
+    .time-box span {
+        color: var(--text-color-light);
+    }
+
+    .mensagem {
+        color: var(--text-color-light);
+    }
+}
+
+@media (max-width: 480px) {
+    .countdown-container h2 {
+        font-size: 2rem;
+    }
+
+    .countdown {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .time-box {
+        margin: 10px 0;
+    }
+
+    .time-box div {
+        font-size: 1.5rem;
+    }
+
+    .time-box span {
+        font-size: 0.75rem;
+    }
 }
